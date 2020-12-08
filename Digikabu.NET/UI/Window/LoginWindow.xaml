@@ -7,7 +7,7 @@
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid DataContext="{StaticResource mvm}">
+    <Grid>
         <TextBox HorizontalAlignment="Left" Margin="181,105,0,0" Text="{Binding Name}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button Content="Login" HorizontalAlignment="Left" Margin="164,156,0,0" VerticalAlignment="Top">
             <i:Interaction.Triggers>
