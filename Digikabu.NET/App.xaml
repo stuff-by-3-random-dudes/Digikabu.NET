@@ -2,8 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Digikabu.NET"
-             StartupUri="MainWindow.xaml">
+             StartupUri="UI/Window/LoginWindow.xaml">
     <Application.Resources>
-         
+
     </Application.Resources>
 </Application>
