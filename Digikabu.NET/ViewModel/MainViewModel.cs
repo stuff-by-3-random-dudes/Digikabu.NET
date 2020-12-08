@@ -15,7 +15,8 @@ namespace Digikabu.NET
 
         #region Databinding
 
-        public string Name { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
 
         #endregion
 
@@ -39,7 +40,7 @@ namespace Digikabu.NET
 
         public void OnLoginClick(object obj)
         {
-            RequestMessageBox(null, Name, "demoCaption", false);
+            RequestMessageBox(null, $"{Username};{Password}", "demoCaption", false);
         }
 
         #endregion
