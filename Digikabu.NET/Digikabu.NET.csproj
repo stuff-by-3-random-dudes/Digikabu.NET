@@ -7,11 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Image\DigikabuNETLogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="UI\Page\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.19" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Image\DigikabuNETLogo.png" />
   </ItemGroup>
 
 </Project>

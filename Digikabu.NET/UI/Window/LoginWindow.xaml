@@ -6,15 +6,19 @@
         xmlns:local="clr-namespace:Digikabu.NET"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="190" Width="508">
     <Grid DataContext="{StaticResource mvm}">
-        <TextBox HorizontalAlignment="Left" Margin="181,105,0,0" Text="{Binding Name}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="164,156,0,0" VerticalAlignment="Top">
+        <TextBox HorizontalAlignment="Left" Margin="37,43,0,0" Text="{Binding Name}" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="37,115,0,0" VerticalAlignment="Top">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Click">
                     <i:InvokeCommandAction Command="{Binding OnLoginClickCommand}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>
+        <TextBox HorizontalAlignment="Left" Margin="37,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
+        <Label Content="UserName" HorizontalAlignment="Left" Margin="34,21,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="34,62,0,0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="54" Margin="238,0,0,0" VerticalAlignment="Center" Width="257" Source="/Image/DigikabuNETLogo.png"/>
     </Grid>
 </Window>
