@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Digikabu.NET"
              StartupUri="UI/Window/LoginWindow.xaml">
     <Application.Resources>
-
+        <local:MainViewModel x:Key="mvm"/>
     </Application.Resources>
 </Application>
