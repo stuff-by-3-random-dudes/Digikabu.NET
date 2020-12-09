@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Digikabu.NET.Persistence;
+using System;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace Digikabu.NET
@@ -38,9 +40,11 @@ namespace Digikabu.NET
 
         #region Mvvm Methods
 
-        public void OnLoginClick(object obj)
+        public async void OnLoginClick(object obj)
         {
-            RequestMessageBox(null, $"{Username};{Password}", "demoCaption", false);
+            var passwordBox = obj as PasswordBox;
+            Password = passwordBox.Password;
+            RequestMessageBox(null, $"{await DigiCon.AuthorizeAsync(Username, Password)}", "demoCaption", false);
         }
 
         #endregion

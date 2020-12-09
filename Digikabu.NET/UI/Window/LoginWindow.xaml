@@ -9,11 +9,11 @@
         Title="MainWindow" Height="190" Width="508">
     <Grid>
         <TextBox HorizontalAlignment="Left" Margin="37,43,0,0" Text="{Binding Username}" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
-        <TextBox Text="{Binding Password}" HorizontalAlignment="Left" Margin="37,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
+        <PasswordBox Name="pbPassword" HorizontalAlignment="Left" Margin="37,84,0,0" PasswordChar="•" VerticalAlignment="Top" Width="175"/>
         <Button Content="Login" HorizontalAlignment="Left" Margin="37,115,0,0" VerticalAlignment="Top">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Click">
-                    <i:InvokeCommandAction Command="{Binding OnLoginClickCommand}"/>
+                    <i:InvokeCommandAction Command="{Binding OnLoginClickCommand}" CommandParameter="{Binding ElementName=pbPassword}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>
