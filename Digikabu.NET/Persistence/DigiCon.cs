@@ -43,7 +43,7 @@ namespace Digikabu.NET.Persistence
                     Encoding.UTF8, "application/json");
 
                 ///Using PostAsync we will send a POST request to the API.
-                var response = await client.PostAsync("https://digikabu.de/api/authenticate", httpContent); 
+                var response = await client.PostAsync("https://digikabu.de/api/authenticate", httpContent);
 
                 ///After sending our POST request we are awaiting a response from the API.
                 ///As soon as we receive said response, we will save it as a String
@@ -51,7 +51,7 @@ namespace Digikabu.NET.Persistence
 
                 ///This checks if we are getting an Bearer authentication key as response.
                 ///If we are not, then we will simply return false, since our authorization failed.
-                if(responseString.Contains("Username or password is incorrect"))
+                if (responseString.Contains("Username or password is incorrect"))
                 {
                     return false;
                 }
@@ -68,6 +68,47 @@ namespace Digikabu.NET.Persistence
             }
         }
 
+        /// <summary>
+        /// GetScheduleOfToday gets the Schedule of the Current Day using the Digikabu API
+        /// </summary>
+        /// <returns>The schedule of the Current Day as JSON string</returns>
+        public static async Task<string> GetScheduleOfTodayAsync()
+        {
 
+            if (await AuthorizeAsync(un, pw) == true)
+            {
+
+                try
+                {
+                    RemoveAuthHeader();
+                    client.DefaultRequestHeaders.Add("Authorization", auth);
+                    var response = await client.GetAsync("https://digikabu.de/api/stundenplan?datum=" + DateTime.Now.ToString("yyyy-MM-dd"));
+
+                    var responseString = await response.Content.ReadAsStringAsync();
+                    return responseString;
+
+                }
+                catch (Exception e)
+                {
+                    return e.Message;
+                }
+            }
+
+        }
+
+        /// <summary>
+        /// RemoveAuthHeader is used to remove the Bearer Authorization Token from the Header of a Request
+        /// </summary>
+        public static void RemoveAuthHeader()
+        {
+            try
+            {
+                client.DefaultRequestHeaders.Remove("Authorization");
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
     }
 }

@@ -22,6 +22,7 @@ namespace Digikabu.NET.UI.Window
         public MasterWindow()
         {
             InitializeComponent();
+            tb.Text = DigiCon.GetScheduleOfToday();
         }
     }
 }

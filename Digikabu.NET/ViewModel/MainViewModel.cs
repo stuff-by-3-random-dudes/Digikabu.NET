@@ -65,7 +65,16 @@ namespace Digikabu.NET
         {
             var passwordBox = obj as PasswordBox;
             Password = passwordBox.Password;
-            RequestMessageBox(null, $"{await DigiCon.AuthorizeAsync(Username, Password)}", "demoCaption", false);
+            //RequestMessageBox(null, $"{await DigiCon.AuthorizeAsync(Username, Password)}", "demoCaption", false);
+            bool authorized = await DigiCon.AuthorizeAsync(Username, Password);
+            if (authorized)
+            {
+                new MasterWindow().Show();
+            }
+            else
+            {
+                RequestMessageBox(null, $"Nutzername und/oder Passwort falsch", "Fehler", false);
+            }
         }
 
         #endregion
