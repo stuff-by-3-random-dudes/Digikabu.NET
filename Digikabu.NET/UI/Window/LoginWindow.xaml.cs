@@ -18,10 +18,13 @@ namespace Digikabu.NET
             DataContext = mvm;
             InitializeComponent();
             SetupEvents();
-
+            
             
           
         }
+
+     
+
         public BitmapImage ToImage(byte[] array)
         {
             using (var ms = new System.IO.MemoryStream(array))

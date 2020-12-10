@@ -20,7 +20,7 @@
         </Button>
         <Label Content="UserName" HorizontalAlignment="Left" Margin="34,21,0,0" VerticalAlignment="Top"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="34,62,0,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left"  Margin="235,31,0,0" VerticalAlignment="Top" Source="../../Resources/Digikabu_dark.png" Name="ilogo" Height="96" Width="269"/>
+        <Image HorizontalAlignment="Left"  Margin="231,44,0,0" VerticalAlignment="Top" Source="../../Image/DigikabuNETLogo.png" Name="ilogo" Height="62" Width="269"/>
 
     </Grid>
 </Window>

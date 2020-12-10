@@ -1,4 +1,5 @@
 ﻿using Digikabu.NET.Persistence;
+using Microsoft.Win32;
 using System;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -30,7 +31,27 @@ namespace Digikabu.NET
 
         public MainViewModel()
         {
+            SetupTheme();
             SetupCommands();
+        }
+
+        private void SetupTheme()
+        {
+            if(!Properties.Settings.Default.IsThemeLocked)
+            {
+                var theme = Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", 1);
+                switch (theme)
+                {
+                    case 0:
+                        Properties.Settings.Default.UseDarkMode = true;
+                        Properties.Settings.Default.Save();
+                        break;
+                    case 1:
+                        Properties.Settings.Default.UseDarkMode = false;
+                        Properties.Settings.Default.Save();
+                        break;
+                }
+            }
         }
 
         public void SetupCommands()
