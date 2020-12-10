@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Remove="Image\DigikabuNETLogo.png" />
+    <None Remove="Resources\Digikabu_dark.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,10 +17,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.19" />
+    <PackageReference Include="System.Runtime.WindowsRuntime.UI.Xaml" Version="4.7.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Image\DigikabuNETLogo.png" />
+    <Resource Include="Resources\Digikabu_dark.png" />
   </ItemGroup>
 
   <ItemGroup>

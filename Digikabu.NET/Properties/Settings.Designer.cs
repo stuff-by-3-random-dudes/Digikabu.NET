@@ -22,5 +22,29 @@ namespace Digikabu.NET.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseDarkMode {
+            get {
+                return ((bool)(this["UseDarkMode"]));
+            }
+            set {
+                this["UseDarkMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsThemeLocked {
+            get {
+                return ((bool)(this["IsThemeLocked"]));
+            }
+            set {
+                this["IsThemeLocked"] = value;
+            }
+        }
     }
 }
