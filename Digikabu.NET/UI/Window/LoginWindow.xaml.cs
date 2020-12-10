@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿
+using System.Windows;
 
 namespace Digikabu.NET
 {
@@ -14,6 +15,9 @@ namespace Digikabu.NET
             DataContext = mvm;
             InitializeComponent();
             SetupEvents();
+
+            
+          
         }
 
         private void SetupEvents()
