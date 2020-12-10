@@ -1,5 +1,4 @@
 ﻿using Digikabu.NET.Persistence;
-using Microsoft.Win32;
 using System;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -31,14 +30,7 @@ namespace Digikabu.NET
 
         public MainViewModel()
         {
-            SetupTheme();
             SetupCommands();
-        }
-
-        private void SetupTheme()
-        {
-            var theme = Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", 1);
-
         }
 
         public void SetupCommands()
