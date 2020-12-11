@@ -11,6 +11,9 @@ namespace Digikabu.NET.Persistence
     //Digikabu API Controller
     class DigiCon
     {
+        private static string username;
+        private static string password;
+
         ///Will be used for API Requests
         static HttpClient client = new HttpClient(new HttpClientHandler
         {
@@ -60,6 +63,8 @@ namespace Digikabu.NET.Persistence
                 ///"Bearer [authkey]"
                 auth = "Bearer " + responseString.Replace("\"", "");
 
+                SetLoginData(un, pw);
+
                 return true;
             }
             catch (Exception e)
@@ -68,14 +73,19 @@ namespace Digikabu.NET.Persistence
             }
         }
 
+        private static void SetLoginData(string un, string pw)
+        {
+            username = un;
+            password = pw;
+        }
+
         /// <summary>
         /// GetScheduleOfToday gets the Schedule of the Current Day using the Digikabu API
         /// </summary>
         /// <returns>The schedule of the Current Day as JSON string</returns>
         public static async Task<string> GetScheduleOfTodayAsync()
         {
-
-            if (await AuthorizeAsync(un, pw) == true)
+            if (/*await AuthorizeAsync(username, password) == */true)
             {
 
                 try
@@ -93,7 +103,7 @@ namespace Digikabu.NET.Persistence
                     return e.Message;
                 }
             }
-
+            return null;
         }
 
         /// <summary>

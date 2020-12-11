@@ -1,4 +1,5 @@
 ﻿using Digikabu.NET.Persistence;
+using Digikabu.NET.UI.Window;
 using Microsoft.Win32;
 using System;
 using System.Windows.Controls;
@@ -37,7 +38,7 @@ namespace Digikabu.NET
 
         private void SetupTheme()
         {
-            if(!Properties.Settings.Default.IsThemeLocked)
+            if (!Properties.Settings.Default.IsThemeLocked)
             {
                 var theme = Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", 1);
                 switch (theme)
@@ -69,6 +70,7 @@ namespace Digikabu.NET
             bool authorized = await DigiCon.AuthorizeAsync(Username, Password);
             if (authorized)
             {
+                // ToDo illegal
                 new MasterWindow().Show();
             }
             else
